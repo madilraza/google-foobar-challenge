@@ -16,4 +16,5 @@ My answers to [Google Foobar](https://www.google.com/foobar/) challenges, in Jav
 ### Level 3
 
 1. Save Beta Rabbit
-2. ???
+2. Spy snippets
+3. ???
