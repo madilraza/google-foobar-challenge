@@ -2,6 +2,7 @@
 
 My answers to [Google Foobar](https://www.google.com/foobar/) challenges, in Java.
 
+
 ## Index
 
 ### Level 1
@@ -17,4 +18,8 @@ My answers to [Google Foobar](https://www.google.com/foobar/) challenges, in Jav
 
 1. Save Beta Rabbit
 2. Spy snippets
-3. ???
+3. Hash it out
+
+### Level 4
+
+1. ???
