@@ -94,8 +94,8 @@ public class Answer {
      */
     public Slice(int s, int e) {
       start = s;
-      end = e;
-      size = end - start;
+      end   = e;
+      size  = end - start;
     }
   }
 
@@ -114,6 +114,21 @@ public class Answer {
    * @return Smallest slice of the document containing all search terms.
    */
   public static String answer(String document, String[] searchTerms) {
+
+    /*
+     * Save every position of the document that contains a search term.
+     *
+     * Start iterating over all terms positions, from first to last.
+     * Keep track of how many unique terms where found. When all
+     * search terms are found, create a snippet from the first term position
+     * to the current position and save it.
+     *
+     * Discard the first term position and iterate again over all terms
+     * positions. Keep doing this until there's less terms positions
+     * than unique terms.
+     *
+     * Grab the smallest snippet found after the previous operation.
+     */
 
     HashMap<Integer, String> termsPositions;
     HashSet<String> termsSet;
@@ -156,7 +171,7 @@ public class Answer {
     for (int i = 0; i < words.length; i++) {
       if (termsSet.contains(words[i])) {
         positions.add(i);
-        termsPositions.put(i,words[i]);
+        termsPositions.put(i, words[i]);
       }
     }
 
@@ -168,6 +183,7 @@ public class Answer {
 
       // For each position
       for (int position : positions) {
+
         /*
          * Add the term of that position to a term Set. It will
          * not contain duplicate terms.
@@ -175,6 +191,7 @@ public class Answer {
         term = termsPositions.get(position);
         termsSet.add(term);
         last = position;
+
         /*
          * When the term Set size is equal to the search terms amount,
          * we have found a slice. Save the slice start as the first
@@ -182,7 +199,7 @@ public class Answer {
          * term position that completed the slice.
          */
         if (termsSet.size() == searchTerms.length) {
-          slice = new Slice(positions.get(0),last);
+          slice = new Slice(positions.get(0), last);
           sliceCandidates.add(slice);
           break;
         }
@@ -197,7 +214,7 @@ public class Answer {
     }
 
     /*
-     * Create a custom comparator that compares Slice objects
+     * Create a custom comparator that compares "Slice" objects
      * by their "size" property.
      */
     smallestSlice = new Comparator<Slice>() {
@@ -207,7 +224,7 @@ public class Answer {
     };
 
     // Sort all found slices by size, and retrieve the smallest one.
-    Collections.sort(sliceCandidates,smallestSlice);
+    Collections.sort(sliceCandidates, smallestSlice);
     slice = sliceCandidates.get(0);
 
     /*

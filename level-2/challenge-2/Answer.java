@@ -54,10 +54,14 @@ public class Answer {
    * Takes an integer "x" that represents the weight of an object
    * in the left side of a balance. Returns an Array of Strings,
    * representing where weights should be placed, in order for the two
-   * sides to be balanced.
+   * sides to be balanced. Each position of the array represents a power
+   * of 3 weight, in ascending order. The contents of each position
+   * are strings telling to put the current weight on the left ("L"),
+   * right ("R") or to not use the weight ("-"). The array does not
+   * end with a "-" string.
    *
    * @param x The weight of the object on the left side of the balance.
-   * @return List of where each weight should be placed.
+   * @return List of where each power of 3 weight should be placed.
    */
   public static String[] answer(int x) {
 

@@ -55,9 +55,10 @@ import java.lang.StringBuilder;
 public class Answer {
 
   /**
-   * Receives an Array of Strings, where all are lowercase letters
-   * with a maximum of 10 characters each, with a maximum total of 5000.
-   * Returns a integer representing the amount of "distinct" strings.
+   * Receives an array of strings, where all are lowercase letters
+   * with a maximum of 10 characters each, with a maximum total of
+   * 5000 strings. Returns a integer representing the amount of
+   * "distinct" strings.
    *
    * The "distinct" definition is that it does not count strings that are
    * equal to any other, and equal to any other reversed.
@@ -65,7 +66,7 @@ public class Answer {
    * "abc" == "abc"
    * "abc" == "cba"
    *
-   * @param x Array of Strings codes, all lowercase letters.
+   * @param x Array of codes, all lowercase letters.
    * @return Integer representing the total "distinct" codes.
    */
   public static int answer(String[] x) {

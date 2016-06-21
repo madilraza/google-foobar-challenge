@@ -11,12 +11,12 @@
  * in his career, he was an average paper pusher, working in
  * an office with some very backwards technology. One of his
  * primary jobs was to carry date cards between departments.
- * One morning, he tripped over a unicycle and dropped his
- * date cards on the floor. He hit his head - and hit upon
- * the idea of breeding an army of zombie rabbits to do his
- * bidding and manage simple tasks. But that comes later.
- * Before he could quit with an explosive YouTube video,
- * the professor had to get his cards back in order.
+ * One morning, he tripped over a unicycle and dropped his date
+ * cards on the floor. He hit his head - and hit upon the idea of
+ * breeding an army of zombie rabbits to do his bidding and manage
+ * simple tasks. But that comes later. Before he could quit with
+ * an explosive YouTube video, the professor had to get his cards
+ * back in order.
  *
  * Aha! It seems he recorded the details of this life-changing
  * event in his diary. Let's try to reproduce his methods:
@@ -67,8 +67,8 @@ public class Answer {
 
   /**
    * Receives 3 integers that can form a valid "mm/dd/yy" date.
-   * each one can be from 1 to 99 inclusive. Returns a string with the
-   * "mm/dd/yy" date if there is only one valid arrangement of the numbers,
+   * Each one can be from 1 to 99 inclusive. Returns a string with the
+   * "mm/dd/yy" date if there's only one valid arrangement of numbers,
    * otherwise returns "Ambiguous".
    *
    * @param x An integer ranging from 1 to 99 inclusive.
@@ -104,19 +104,18 @@ public class Answer {
     year  = dateArr[2];
 
     /*
-     * First, we check if the "day" integer is smaller than 13.
+     * First, we check if "day" is smaller than 13.
      * If it is, it could also be a month, so the date is ambiguous.
      *
-     * But if both "day" and "month" are equal, there's
-     * no ambiguity.
+     * But if both "day" and "month" are equal, there's no ambiguity.
      */
     if (day < 13 && month != day) {
       return fail;
     }
 
     /*
-     * Next, we must check if the "year" integer is smaller than
-     * the maximum number of days in the "month" integer.
+     * Next, we must check if "year" is smaller than the maximum number
+     * of days in "month".
      *
      * For that we must first know how many days each month has.
      * It is assumed that there are no leap years.
@@ -137,12 +136,10 @@ public class Answer {
     };
 
     /*
-     * If the "year" integer is equal or less than the number
-     * of the days, then it's ambiguous, since the year could
-     * also be a day.
+     * If "year" is equal or less than the number of days, then it's
+     * ambiguous, since the year could also be a day.
      *
-     * But if both "day" and "year" are equal, there's
-     * no ambiguity.
+     * But if both "day" and "year" are equal, there's no ambiguity.
      */
     if (year <= daysInMonth[month - 1] && day != year) {
       return fail;

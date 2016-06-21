@@ -34,21 +34,19 @@
  * not exist a route in which Beta Rabbit will not be eaten, then
  * return -1.
  *
- * food is the amount of food Beta Rabbit starts with, and will
- * be a positive integer no larger than 200.
+ * food is the amount of food Beta Rabbit starts with, and will be
+ * a positive integer no larger than 200.
  *
- * grid will be a list of N elements. Each element of grid will
- * itself be a list of N integers each, denoting a single row
- * of N rooms. The first element of grid will be the list
- * denoting the top row, the second element will be the list
- * denoting second row from the top, and so on until the last
- * element, which is the list denoting the bottom row. In the
- * list denoting a single row, the first element will be the
- * amount of food the zombie in the left-most room in that row
- * needs, the second element will be the amount the zombie in
- * the room to its immediate right needs and so on. The top
- * left room will always contain the integer 0, to indicate
- * that there is no zombie there
+ * grid will be a list of N elements. Each element of grid will itself
+ * be a list of N integers each, denoting a single row of N rooms. The
+ * first element of grid will be the list denoting the top row, the
+ * second element will be the list denoting second row from the top, and
+ * so on until the last element, which is the list denoting the bottom
+ * row. In the list denoting a single row, the first element will be the
+ * amount of food the zombie in the left-most room in that row needs,
+ * the second element will be the amount the zombie in the room to its
+ * immediate right needs and so on. The top left room will always contain
+ * the integer 0, to indicate that there is no zombie there.
  *
  * The number of rows N will not exceed 20, and the amount
  * of food each zombie requires will be a positive integer
@@ -90,7 +88,7 @@ public class Answer {
    * to the bottom right of the grid, feeding the zombies in
    * the way. Return -1 if it's not possible to get to the end
    * without running out of food in the middle of the map and
-   * get mauled to death by a zombie.
+   * getting mauled to death by a zombie.
    *
    * Takes in consideration that it's only possible to move
    * to the left or bottom of each map cell.
@@ -102,14 +100,6 @@ public class Answer {
   public static int answer(int food, int[][] grid) {
 
     /*
-     * Considerations:
-     *
-     * Traditional methods won't work since there's a time
-     * constraint. Thus memoization is required.
-     *
-     *
-     * Procedure:
-     *
      * Create a "food needed" map, with the same dimensions
      * as the grid, and store in each cell all possible combinations
      * of food needed to get there. To achieve this, each cell will
