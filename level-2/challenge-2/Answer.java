@@ -102,7 +102,9 @@ public class Answer {
 
       /*
        * Adding 1 to x before diving is necessary for the
-       * next remainder to be correct.
+       * next remainder to be correct. I honestly don't know why.
+       * I took this example from a code golf challenge, and
+       * there was no explanation.
        */
       x = (x+1)/3;
     }
